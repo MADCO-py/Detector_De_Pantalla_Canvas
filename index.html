@@ -336,6 +336,84 @@
     .result-box h2 { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
     .result-box p { font-size: 14px; color: #6b7780; line-height: 1.7; }
     .result-ts { margin-top: 20px; font-size: 12px; color: #aaa; }
+
+    /* ════════════════════════
+       RESPONSIVE — MOBILE
+    ════════════════════════ */
+    @media (max-width: 640px) {
+
+      /* Nav y breadcrumb */
+      .ic-nav { padding: 0 14px; }
+      .ic-nav span { font-size: 13px; }
+      .ic-breadcrumb {
+        padding: 8px 14px;
+        white-space: nowrap;
+        overflow-x: auto;
+      }
+
+      /* Página 0 — modo */
+      .mode-wrap { margin: 20px auto; }
+      .mode-title { font-size: 20px; }
+      .mode-cards { flex-direction: column; }
+      .mode-card { padding: 22px 18px; }
+
+      /* Páginas con quiz-wrap (intro, quiz-a, quiz-b) */
+      .quiz-wrap {
+        flex-direction: column;
+        padding: 16px 12px 40px;
+        gap: 16px;
+      }
+      .quiz-title { font-size: 20px; }
+
+      /* Sidebars al 100% cuando quedan debajo */
+      .intro-sidebar,
+      .quiz-sidebar { width: 100%; padding-top: 0; }
+
+      /* Cuerpo de preguntas */
+      .q-body { padding: 14px 14px 16px; }
+
+      /* Footer modo A — apilar verticalmente */
+      .quiz-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .footer-right {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .quiz-footer .btn-secondary,
+      .footer-right .btn-primary { text-align: center; width: 100%; }
+
+      /* Barra prev/next modo B */
+      .btn-prev, .btn-next { flex: 1; text-align: center; }
+
+      /* Barra submit modo B */
+      .submit-bar-b {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+      }
+      .submit-bar-b .btn-primary { text-align: center; }
+
+      /* Banner de pestaña */
+      .tab-banner { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
+
+      /* Modal */
+      .modal-ftr {
+        flex-direction: column-reverse;
+        gap: 8px;
+        padding: 12px 16px 14px;
+      }
+      .modal-ftr .btn-secondary,
+      .modal-ftr .btn-primary { width: 100%; text-align: center; }
+      .modal-body { padding: 16px 18px; }
+
+      /* Resultado */
+      .result-wrap { margin: 24px auto; }
+      .result-box { padding: 32px 20px; }
+    }
   </style>
 </head>
 <body>
