@@ -338,81 +338,84 @@
     .result-ts { margin-top: 20px; font-size: 12px; color: #aaa; }
 
     /* ════════════════════════
-       RESPONSIVE — MOBILE
+       RESPONSIVE MOBILE
     ════════════════════════ */
     @media (max-width: 640px) {
 
-      /* Nav y breadcrumb */
-      .ic-nav { padding: 0 14px; }
+      /* Nav */
+      .ic-nav { height: 48px; padding: 0 16px; }
       .ic-nav span { font-size: 13px; }
-      .ic-breadcrumb {
-        padding: 8px 14px;
-        white-space: nowrap;
-        overflow-x: auto;
-      }
+      .ic-breadcrumb { display: none; } /* muy estrecho, lo ocultamos */
 
-      /* Página 0 — modo */
-      .mode-wrap { margin: 20px auto; }
+      /* Modo selección */
+      .mode-wrap { margin: 24px auto; padding: 0 14px; }
       .mode-title { font-size: 20px; }
-      .mode-cards { flex-direction: column; }
-      .mode-card { padding: 22px 18px; }
+      .mode-sub { margin-bottom: 20px; }
+      .mode-cards { flex-direction: column; gap: 14px; }
+      .mode-card { padding: 20px 18px; }
+      .mode-card-icon { width: 40px; height: 40px; margin-bottom: 12px; }
+      .mode-card-icon i { font-size: 18px; }
 
-      /* Páginas con quiz-wrap (intro, quiz-a, quiz-b) */
+      /* Layout quiz: columna única, sidebar va abajo */
       .quiz-wrap {
         flex-direction: column;
-        padding: 16px 12px 40px;
+        padding: 16px 14px 40px;
         gap: 16px;
       }
-      .quiz-title { font-size: 20px; }
 
-      /* Sidebars al 100% cuando quedan debajo */
+      /* Sidebar al fondo como banda horizontal */
       .intro-sidebar,
-      .quiz-sidebar { width: 100%; padding-top: 0; }
+      .quiz-sidebar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        border-top: 1px solid #c7cdd1;
+        padding-top: 14px;
+      }
+      .intro-sidebar > *,
+      .quiz-sidebar > .qs-block {
+        flex: 1 1 140px;
+        min-width: 130px;
+        padding: 8px 12px;
+        border-right: 1px solid #f0f0f0;
+      }
+      .intro-sidebar > *:last-child,
+      .quiz-sidebar > .qs-block:last-child { border-right: none; }
 
-      /* Cuerpo de preguntas */
+      /* Títulos */
+      .quiz-title { font-size: 20px; }
+      .section-title { font-size: 16px; }
+
+      /* Tarjetas de pregunta */
       .q-body { padding: 14px 14px 16px; }
+      .q-head { padding: 9px 14px; }
 
-      /* Footer modo A — apilar verticalmente */
-      .quiz-footer {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-      }
-      .footer-right {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-      }
-      .quiz-footer .btn-secondary,
-      .footer-right .btn-primary { text-align: center; width: 100%; }
+      /* Footer quiz A */
+      .quiz-footer { flex-wrap: wrap; gap: 10px; }
+      .footer-right { flex-wrap: wrap; gap: 8px; }
+      .btn-primary, .btn-secondary { padding: 10px 14px; font-size: 13px; }
 
-      /* Barra prev/next modo B */
-      .btn-prev, .btn-next { flex: 1; text-align: center; }
+      /* Prev/Next modo B */
+      .prevnext-bar { padding: 8px 0; }
+      .btn-prev, .btn-next { padding: 10px 16px; font-size: 13px; }
 
-      /* Barra submit modo B */
-      .submit-bar-b {
-        flex-direction: column;
-        gap: 8px;
-        align-items: stretch;
-      }
-      .submit-bar-b .btn-primary { text-align: center; }
+      /* Submit bar B */
+      .submit-bar-b { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .submit-bar-b .btn-primary { width: 100%; text-align: center; }
 
       /* Banner de pestaña */
-      .tab-banner { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
+      .tab-banner { font-size: 12px; padding: 8px 14px; }
 
       /* Modal */
-      .modal-ftr {
-        flex-direction: column-reverse;
-        gap: 8px;
-        padding: 12px 16px 14px;
-      }
-      .modal-ftr .btn-secondary,
-      .modal-ftr .btn-primary { width: 100%; text-align: center; }
-      .modal-body { padding: 16px 18px; }
+      .modal-box { width: 95%; }
+      .modal-ftr { flex-direction: column-reverse; gap: 8px; }
+      .modal-ftr button { width: 100%; text-align: center; padding: 11px; }
 
       /* Resultado */
-      .result-wrap { margin: 24px auto; }
-      .result-box { padding: 32px 20px; }
+      .result-wrap { margin: 30px auto; padding: 0 14px; }
+      .result-box { padding: 36px 20px; }
+      .result-box h2 { font-size: 22px; }
     }
   </style>
 </head>
